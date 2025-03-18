@@ -1,5 +1,8 @@
-flask
-requests
-beautifulsoup4
+flask==3.0.2
+requests==2.31.0
+beautifulsoup4==4.12.3
 google-generativeai
-gunicorn
+gunicorn==21.2.0
+urllib3==2.2.1
+python-dotenv==1.0.1
+lxml==5.1.0
