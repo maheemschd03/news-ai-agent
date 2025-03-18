@@ -1,0 +1,324 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global News Hub</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 0 20px;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Header */
+        header {
+            background: #333;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: 3px solid #007bff;
+        }
+
+        header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+
+        header li {
+            float: left;
+            display: inline;
+            padding: 0 20px 0 20px;
+        }
+
+        header #branding {
+            float: left;
+        }
+
+        header #branding h1 {
+            margin: 0;
+        }
+
+        header nav {
+            float: right;
+            margin-top: 10px;
+        }
+
+        header .highlight, header .current a {
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        /* Showcase */
+        #showcase {
+            min-height: 400px;
+            background: url('https://images.unsplash.com/photo-1508615070457-7ba752aa4670?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            text-align: center;
+            color: #fff;
+            padding-top: 50px;
+        }
+
+        #showcase h1 {
+            margin-top: 100px;
+            font-size: 55px;
+            margin-bottom: 10px;
+        }
+
+        #showcase p {
+            font-size: 20px;
+        }
+
+        /* News Sections */
+        #news {
+            padding: 20px;
+        }
+
+        #news h2 {
+            color: #333;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        .news-section {
+            margin-bottom: 30px;
+        }
+
+        .news-item {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .news-item:last-child {
+            border-bottom: none;
+        }
+
+        .news-source {
+            font-style: italic;
+            color: #777;
+            font-size: 0.9em;
+        }
+
+        /* Footer */
+        footer {
+            padding: 20px;
+            margin-top: 20px;
+            color: #fff;
+            background-color: #333;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                text-align: center;
+            }
+
+            header #branding,
+            header nav {
+                float: none;
+            }
+
+            header ul {
+                padding: 0;
+            }
+
+            header li {
+                float: none;
+                display: block;
+            }
+
+            header nav a {
+                padding: 5px;
+            }
+
+            #showcase h1 {
+                font-size: 35px;
+            }
+
+            #showcase p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">Global</span> News Hub</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li class="current"><a href="#">Home</a></li>
+                    <li><a href="#bbc">BBC</a></li>
+                    <li><a href="#thehindu">The Hindu</a></li>
+                    <li><a href="#timesofindia">Times of India</a></li>
+                    <li><a href="#cnn">CNN</a></li>
+                    <li><a href="#wired">Wired</a></li>
+                    <li><a href="#techcrunch">TechCrunch</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="showcase">
+        <div class="container">
+            <h1>Stay Informed, Stay Ahead</h1>
+            <p>Your one-stop destination for global news coverage.</p>
+        </div>
+    </section>
+
+    <section id="news">
+        <div class="container">
+
+            <section class="news-section" id="bbc">
+                <h2>BBC News</h2>
+                <div class="news-item">
+                    <strong>Top Story:</strong> Trump's statements ahead of a call with Putin, NASA astronauts returning to Earth, and Israeli air strikes on Gaza.
+                    <p class="news-source">Source: BBC</p>
+                </div>
+                <div class="news-item">
+                    <strong>Other Headlines:</strong> Scientists at Antarctic base rocked by alleged assault, Germany defense spending, Battle of Britain pilot dies, and Chinese media on Trump's cuts to Voice of America.
+                    <p class="news-source">Source: BBC</p>
+                </div>
+                <div class="news-item">
+                    <strong>Future/Travel:</strong> Cleaning water bottles, Malta's Comino island.
+                    <p class="news-source">Source: BBC</p>
+                </div>
+            </section>
+
+            <section class="news-section" id="thehindu">
+                <h2>The Hindu</h2>
+                <div class="news-item">
+                    <strong>Top Stories:</strong> Parliament Budget Session updates, Railways' financial status, Sonia Gandhi's demand for minimum wage, Putin and Trump to discuss Ukraine, and clashes in Nagpur.
+                    <p class="news-source">Source: The Hindu</p>
+                </div>
+                <div class="news-item">
+                    <strong>International:</strong> Israel's strikes breach ceasefire.
+                    <p class="news-source">Source: The Hindu</p>
+                </div>
+                <div class="news-item">
+                    <strong>Science:</strong> SpaceX crew Dragon splashdown.
+                    <p class="news-source">Source: The Hindu</p>
+                </div>
+                <div class="news-item">
+                    <strong>Other:</strong> Tulsi Gabbard on Trump's "America First" policy.
+                    <p class="news-source">Source: The Hindu</p>
+                </div>
+            </section>
+
+            <section class="news-section" id="timesofindia">
+                <h2>Times of India</h2>
+                <div class="news-item">
+                    <strong>Top Stories:</strong> Coverage of Sunita Williams' Earth return, Nagpur violence, and a call center raid in Pakistan.
+                    <p class="news-source">Source: Times of India</p>
+                </div>
+                <div class="news-item">
+                    <strong>Politics:</strong> Rahul Gandhi's criticism of PM Modi on Maha Kumbh.
+                    <p class="news-source">Source: Times of India</p>
+                </div>
+                <div class="news-item">
+                    <strong>Other Headlines:</strong> Focus on mosque loudspeakers, Melinda Gates on Bill Gates' divorce comments, and a minister's resignation in Uttarakhand.
+                    <p class="news-source">Source: Times of India</p>
+                </div>
+                <div class="news-item">
+                    <strong>Business:</strong> Forever 21 operator files for bankruptcy in the US.
+                    <p class="news-source">Source: Times of India</p>
+                </div>
+                <div class="news-item">
+                    <strong>Technology:</strong> UBS sets remote work conditions.
+                    <p class="news-source">Source: Times of India</p>
+                </div>
+            </section>
+
+            <section class="news-section" id="cnn">
+                <h2>CNN</h2>
+                <div class="news-item">
+                    <strong>Top Stories:</strong> Gaza truce shattered by Israeli strikes.
+                    <p class="news-source">Source: CNN</p>
+                </div>
+                <div class="news-item">
+                    <strong>Politics:</strong> Trump's team seeks to bypass the judiciary, Trump-Putin call on Ukraine.
+                    <p class="news-source">Source: CNN</p>
+                </div>
+                <div class="news-item">
+                    <strong>Other Headlines:</strong> Coverage of a Hong Kong tycoon's death, Eva Longoria's birthday, and potential NOAA layoffs.
+                    <p class="news-source">Source: CNN</p>
+                </div>
+            </section>
+
+            <section class="news-section" id="wired">
+                <h2>Wired</h2>
+                <div class="news-item">
+                    <strong>Top Stories:</strong> Trump's million-dollar dinner with Elon Musk, potential USDA food supply chain issues, and the anti-DEI agenda.
+                    <p class="news-source">Source: Wired</p>
+                </div>
+                <div class="news-item">
+                    <strong>Security:</strong> Concerns about Amazon Echo privacy.
+                    <p class="news-source">Source: Wired</p>
+                </div>
+                <div class="news-item">
+                    <strong>Science:</strong> Undergraduate disproves data science conjecture.
+                    <p class="news-source">Source: Wired</p>
+                </div>
+                <div class="news-item">
+                    <strong>Other:</strong> Articles on cleaning vinyl records and the potential for explosive custard powder.
+                    <p class="news-source">Source: Wired</p>
+                </div>
+            </section>
+
+            <section class="news-section" id="techcrunch">
+                <h2>TechCrunch</h2>
+                <div class="news-item">
+                    <strong>Top Stories:</strong> Google may acquire Wiz, Rippling sues Deel, and Flexport accuses employees of stealing code.
+                    <p class="news-source">Source: TechCrunch</p>
+                </div>
+                <div class="news-item">
+                    <strong>AI:</strong> OpenAI exec leaves to found materials science startup, xAI acquires generative AI video startup.
+                    <p class="news-source">Source: TechCrunch</p>
+                </div>
+                <div class="news-item">
+                    <strong>Startups:</strong> Vendease restructures employees' salaries, GrubMarket raises funding.
+                    <p class="news-source">Source: TechCrunch</p>
+                </div>
+                <div class="news-item">
+                    <strong>Transportation:</strong> Google, Speedinvest back Kenya's Leta; Waymo's mapping permit.
+                    <p class="news-source">Source: TechCrunch</p>
+                </div>
+            </section>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>Global News Hub, Copyright &copy; 2024</p>
+    </footer>
+
+</body>
+</html>

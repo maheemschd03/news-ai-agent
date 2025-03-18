@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News AI Agent</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .progress-bar {
+            transition: width 0.5s ease-in-out;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div class="gradient-bg text-white py-8 shadow-lg">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl font-bold mb-2">News AI Agent</h1>
+            <p class="text-gray-300">Automated news aggregation and website generation</p>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-4 py-8">
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <div class="flex items-center justify-between mb-6">
+                <div>
+                    <h2 class="text-2xl font-semibold mb-2">News Collection Status</h2>
+                    <p id="status-message" class="text-gray-600">Ready to fetch news</p>
+                </div>
+                <button 
+                    id="startButton"
+                    class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg transition duration-200"
+                    onclick="startProcess()">
+                    Start Collection
+                </button>
+            </div>
+
+            <div class="w-full bg-gray-200 rounded-full h-4 mb-4">
+                <div id="progress-bar" 
+                     class="progress-bar bg-blue-600 h-4 rounded-full" 
+                     style="width: 0%">
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-lg p-6">
+            <h2 class="text-2xl font-semibold mb-4">Source Websites</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="p-4 border rounded-lg">
+                    <h3 class="font-semibold">BBC News</h3>
+                    <p class="text-gray-600">International News</p>
+                </div>
+                <div class="p-4 border rounded-lg">
+                    <h3 class="font-semibold">The Hindu</h3>
+                    <p class="text-gray-600">Indian News</p>
+                </div>
+                <div class="p-4 border rounded-lg">
+                    <h3 class="font-semibold">Times of India</h3>
+                    <p class="text-gray-600">Indian News</p>
+                </div>
+                <div class="p-4 border rounded-lg">
+                    <h3 class="font-semibold">CNN</h3>
+                    <p class="text-gray-600">International News</p>
+                </div>
+                <div class="p-4 border rounded-lg">
+                    <h3 class="font-semibold">Wired</h3>
+                    <p class="text-gray-600">Tech News</p>
+                </div>
+                <div class="p-4 border rounded-lg">
+                    <h3 class="font-semibold">TechCrunch</h3>
+                    <p class="text-gray-600">Tech News</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let isRunning = false;
+
+        function startProcess() {
+            if (isRunning) return;
+            
+            isRunning = true;
+            document.getElementById('startButton').disabled = true;
+            document.getElementById('startButton').classList.add('opacity-50');
+            
+            fetch('/start')
+                .then(response => response.json())
+                .then(data => {
+                    checkStatus();
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    isRunning = false;
+                });
+        }
+
+        function checkStatus() {
+            fetch('/status')
+                .then(response => response.json())
+                .then(data => {
+                    updateUI(data);
+                    
+                    if (data.status === 'running') {
+                        setTimeout(checkStatus, 1000);
+                    } else if (data.status === 'complete') {
+                        isRunning = false;
+                        document.getElementById('startButton').disabled = false;
+                        document.getElementById('startButton').classList.remove('opacity-50');
+                        window.location.href = '/Final.html';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    isRunning = false;
+                });
+        }
+
+        function updateUI(data) {
+            document.getElementById('status-message').textContent = data.message;
+            document.getElementById('progress-bar').style.width = `${data.completion}%`;
+        }
+    </script>
+</body>
+</html> 
