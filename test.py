@@ -1,5 +1,5 @@
-import google.generativeai as genai
-from google.generativeai import types
+from google import genai
+from google.genai import types
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urlparse
